@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-spotify-clone-snippet",
+  "version": "1.0.0",
+  "description": "NextJs wrappers react and its main purpose is to make page to render on server\r and send ready html file. This way of creation apps are used because SPA have problems \r with SEO optimization(**Search Engine Optimization**). But now google and yandex claim that\r they fixed this problem and search robots can index SPA correctly.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilichka/NextJs-spotify-clone-snippet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilichka/NextJs-spotify-clone-snippet/issues"
+  },
+  "homepage": "https://github.com/ilichka/NextJs-spotify-clone-snippet#readme",
+  "dependencies": {
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.59.2"
+  }
+}
