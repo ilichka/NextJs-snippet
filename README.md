@@ -105,3 +105,76 @@ The result of ssr is:
 Actual result:
 
 ![actual csr result](csr-example-html.png)
+
+Meta-tags. To add meta-tags to page we should import `Head` from `next/head` and then
+use it in our component. As an example i added meta tag in users page: 
+
+```javascript
+<Head>
+    <meta keywords='nextjs-snippet next'></meta>
+</Head>
+```
+
+Create a main wrapper to take out here main components of page. Create MainComponent.js and 
+move our code from users to this component: 
+
+```javascript
+const MainComponent = ({children, keywords}) => {
+    return (
+        <>
+            <Head>
+                <meta keywords={`nextjs-snippet next ${keywords}`}></meta>
+                <title>Users page</title>
+            </Head>
+            <style jsx>
+                {`
+                    .navbar {
+                      background-color: orange;
+                      padding: 15px;
+                    }
+                `}
+            </style>
+            <div className='navbar'>
+                <A href='/' text='Main' />
+                <A href='/users' text='Users' />
+            </div>
+            <div>{children}</div>
+        </>
+    );
+};
+```
+
+Handle 404 page. Create 404.js in pages folder and that's it!
+
+```javascript
+import React from 'react';
+
+const NotExist = () => {
+    return (
+        <div>
+            Custom not exist page
+        </div>
+    );
+};
+
+export default NotExist;
+```
+
+And finally lets deploy next application. Add scripts to package.json:
+
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build", 
+    "start": "next start"
+  }
+}
+```
+
+Push your code to github and come to [vercel](https://vercel.com/home). NextJs 
+was invented by Vercel, so they also provide a possibility to deploy applications.
+Click on `deploy free` button and login in github. Then import your repository from 
+list and choose user(it would be your github). In next window you can configurate your
+project and then click on `deploy` button. Congratulations, you got the link to your deploy and 
+now you can share it.

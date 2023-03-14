@@ -1,33 +1,23 @@
 import Link from "next/link";
-import A from "../components/A";
+import MainComponent from "../components/MainComponent";
 
 const Users = ({users}) => {
 
     return (
-        <div>
-            <div className='navbar'>
-                <A href='/' text='Main' />
-                <A href='/users' text='Users' />
+        <MainComponent keywords='users page'>
+            <div>
+                <h1>Users list</h1>
+                <ul>
+                    {users.map(user => <li key={user.id}>
+                        <Link href={`/users/${user.id}`}>
+                            {user.name}
+                        </Link>
+                    </li>)}
+                </ul>
+
             </div>
-            <h1>Users list</h1>
-            <ul>
-                {users.map(user => <li key={user.id}>
-                    <Link href={`/users/${user.id}`}>
-                        {user.name}
-                    </Link>
-                </li>)}
-            </ul>
-            <style jsx>
-                {`
-                    .navbar {
-                      background-color: orange;
-                      padding: 15px;
-                    }
-                    
-                    
-                `}
-            </style>
-        </div>
+        </MainComponent>
+
     );
 };
 

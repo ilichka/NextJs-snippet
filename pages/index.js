@@ -1,9 +1,11 @@
+import MainComponent from "../components/MainComponent";
+
 const Index = () => {
 
     return (
-        <div>
+        <MainComponent keywords='main page'>
             <h1>Main page</h1>
-        </div>
+        </MainComponent>
     );
 };
 
